@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动物详情</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "微软雅黑", sans-serif;
+    }
+    html, body {
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+      /* min-height: 100vh; */
+      overflow-x: hidden;
+    }
+    /* 新增：顶部导航栏样式，实现贴紧无空隙 */
+    .top-nav {
+      width: 100%;
+      height: 60px;
+      background-color: #fff8f0;
+      border-bottom: 1px solid #f0e0d0;
+      display: flex;
+      align-items: center;
+      padding: 0 0px;
+      margin: 0;
+    }
+    .nav-home {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e64a19;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .nav-time {
+      margin-left: auto;
+      color: #5d4037;
+      font-size: 14px;
+    }
+    .main-content {
+      padding: 0;
+      width: 100%;
+      margin-top: 0;
+    }
+    .animal-title {
+      text-align: center;
+      font-size: 28px;
+      color: #e64a19;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+    .animal-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      width: 100%;
+      margin: 0;
+    }
+    .animal-card {
+      background-color: #fff8e6;
+      border: none !important;
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .animal-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .animal-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .animal-info {
+      text-align: left;
+      width: 100%;
+      color: #5d4037;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .animal-btn-group {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+    .animal-btn {
+      padding: 6px 18px;
+      border: 1px solid #e64a19;
+      background-color: #fff;
+      color: #e64a19;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .animal-btn:hover {
+      background-color: #ffe4c4;
+    }
+    .pagination {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .page-btn {
+      padding: 8px 12px;
+      margin: 0 5px;
+      border: 1px solid #e64a19;
+      border-radius: 4px;
+      background: #fff;
+      color: #e64a19;
+      cursor: pointer;
+    }
+    .page-btn.active {
+      background: #e64a19;
+      color: #fff;
+    }
+    .page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    @media (max-width: 900px) {
+      .animal-card-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .animal-card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 新增：顶部导航栏 -->
+ 
+
+    <!-- 第一页：每个修改按钮加唯一ID -->
+    <div id="page-1" class="animal-card-container">
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-1.jpg" alt="大橘">
+        </div>
+        <div class="animal-info">
+          姓名：大橘<br>年龄：3岁<br>性别：公<br>性格：贪吃、憨厚<br>健康状况：良好
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-1" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-2.jpg" alt="狸花">
+        </div>
+        <div class="animal-info">
+          姓名：狸花<br>年龄：2岁<br>性别：母<br>性格：机灵、敏感<br>健康状况：良好
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-2" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-3.jpg" alt="三花">
+        </div>
+        <div class="animal-info">
+          姓名：三花<br>年龄：1岁半<br>性别：母<br>性格：粘人、活泼<br>健康状况：优秀
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-3" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-4.jpg" alt="奶牛">
+        </div>
+        <div class="animal-info">
+          姓名：奶牛<br>年龄：2岁<br>性别：公<br>性格：调皮、爱玩<br>健康状况：轻微猫藓
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-4" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-5.png" alt="布偶">
+        </div>
+        <div class="animal-info">
+          姓名：布偶<br>年龄：1岁<br>性别：公<br>性格：优雅、傲娇<br>健康状况：良好
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-5" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="./assets/img/animal-detail-6.jpg" alt="小白">
+        </div>
+        <div class="animal-info">
+          姓名：小白<br>年龄：4岁<br>性别：母<br>性格：安静、乖巧<br>健康状况：优秀
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-6" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二页：每个修改按钮加唯一ID -->
+    <div id="page-2" class="animal-card-container" style="display: none;">
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1062/120/120" alt="小七">
+        </div>
+        <div class="animal-info">
+          姓名：小七<br>情况：已救助<br>年龄：2岁<br>性别：母<br>性格：温顺<br>健康状况：良好
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-7" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1068/120/120" alt="墨墨">
+        </div>
+        <div class="animal-info">
+          姓名：墨墨<br>情况：待领养<br>年龄：1.5岁<br>性别：公<br>性格：活泼<br>健康状况：轻微外伤
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-8" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1071/120/120" alt="花花">
+        </div>
+        <div class="animal-info">
+          姓名：花花<br>情况：已绝育<br>年龄：8个月<br>性别：母<br>性格：粘人<br>健康状况：优秀
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-9" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1072/120/120" alt="小橘">
+        </div>
+        <div class="animal-info">
+          姓名：小橘<br>情况：流浪中<br>年龄：1岁<br>性别：公<br>性格：胆小<br>健康状况：良好
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-10" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1066/120/120" alt="奶糖">
+        </div>
+        <div class="animal-info">
+          姓名：奶糖<br>情况：已领养<br>年龄：3岁<br>性别：母<br>性格：安静<br>健康状况：优秀
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-11" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+      <div class="animal-card">
+        <div class="animal-img">
+          <img src="https://picsum.photos/id/1065/120/120" alt="虎子">
+        </div>
+        <div class="animal-info">
+          姓名：虎子<br>情况：治疗中<br>年龄：2岁<br>性别：公<br>性格：凶猛<br>健康状况：受伤
+        </div>
+        <div class="animal-btn-group">
+          <button id="edit-btn-12" class="animal-btn">信息修改</button>
+          <button class="animal-btn">查看详情</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button class="page-btn" id="prev-animal">上一页</button>
+      <button class="page-btn active" id="page-1-btn">1</button>
+      <button class="page-btn" id="page-2-btn">2</button>
+      <button class="page-btn" id="next-animal">下一页</button>
+    </div>
+  </div>
+
+  <script>
+    // ===================== 新增：顶部时间实时更新 =====================
+    function updateNavTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('nav-time').textContent = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+    // 页面加载时立即更新时间，并每秒刷新
+    updateNavTime();
+    setInterval(updateNavTime, 1000);
+
+    // ===================== 第一步：获取当前角色（双重验证） =====================
+    function getCurrentRole() {
+      // 1. 读取URL参数
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlRole = urlParams.get('role');
+      // 2. 读取localStorage
+      const storageRole = localStorage.getItem('role');
+      // 3. 最终角色：有啥用啥，默认user
+      return urlRole || storageRole || 'user';
+    }
+
+    // ===================== 第二步：暴力删除普通用户的修改按钮 =====================
+    function deleteEditButtonsForUser() {
+      const role = getCurrentRole();
+      console.log("当前角色：", role);
+
+      // 所有修改按钮的ID列表
+      const editBtnIds = [
+        'edit-btn-1', 'edit-btn-2', 'edit-btn-3', 
+        'edit-btn-4', 'edit-btn-5', 'edit-btn-6',
+        'edit-btn-7', 'edit-btn-8', 'edit-btn-9',
+        'edit-btn-10', 'edit-btn-11', 'edit-btn-12'
+      ];
+
+      // 普通用户：删除所有修改按钮（从DOM里移除，彻底消失）
+      if (role !== 'admin') {
+        editBtnIds.forEach(btnId => {
+          const btn = document.getElementById(btnId);
+          if (btn) {
+            btn.remove(); // 暴力删除，不是隐藏！
+          }
+        });
+        console.log("✅ 普通用户：已删除所有信息修改按钮");
+      } else {
+        console.log("✅ 管理员：保留所有信息修改按钮");
+      }
+    }
+
+    // ===================== 分页逻辑 =====================
+    function initAnimalPagination(currentPage) {
+      // 隐藏所有页面
+      document.querySelectorAll('.animal-card-container').forEach(el => el.style.display = 'none');
+      // 显示当前页
+      document.getElementById(`page-${currentPage}`).style.display = 'grid';
+      // 切换分页按钮样式
+      document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`page-${currentPage}-btn`).classList.add('active');
+      // 禁用/启用上下页
+      document.getElementById('prev-animal').disabled = currentPage <= 1;
+      document.getElementById('next-animal').disabled = currentPage >= 2;
+      
+      // 分页切换后，重新检查并删除按钮（防止分页加载后按钮重现）
+      deleteEditButtonsForUser();
+    }
+
+    // ===================== 页面加载：先删按钮，再渲染 =====================
+    // 最优先执行：页面还没渲染就删按钮
+    deleteEditButtonsForUser();
+
+    // 页面完全加载后初始化分页
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page') || 1;
+      initAnimalPagination(parseInt(page));
+      
+      // 保险：再执行一次删除
+      deleteEditButtonsForUser();
+    };
+
+    // ===================== 分页按钮点击事件 =====================
+    document.getElementById('prev-animal').addEventListener('click', function() {
+      const activeBtn = document.querySelector('.page-btn.active');
+      const currentPage = parseInt(activeBtn.innerText);
+      if (currentPage > 1) {
+        initAnimalPagination(currentPage - 1);
+      }
+    });
+
+    document.getElementById('next-animal').addEventListener('click', function() {
+      const activeBtn = document.querySelector('.page-btn.active');
+      const currentPage = parseInt(activeBtn.innerText);
+      if (currentPage < 2) {
+        initAnimalPagination(currentPage + 1);
+      }
+    });
+
+    document.getElementById('page-1-btn').addEventListener('click', function() {
+      initAnimalPagination(1);
+    });
+
+    document.getElementById('page-2-btn').addEventListener('click', function() {
+      initAnimalPagination(2);
+    });
+  </script>
+</body>
+</html>
