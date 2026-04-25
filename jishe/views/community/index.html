@@ -1,0 +1,918 @@
+<div class="community-page" id="community-app">
+    <div class="community-container">
+        <div class="left-panel">
+            <div class="card ranger-community-card">
+                <div class="ranger-online">
+                    <i class="fas fa-user-friends"></i>
+                    巡护员社区 今日360位成员在线
+                </div>
+                <div class="ranger-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">今日动态</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">互动点赞</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card hot-topics-card">
+                <div class="hot-topics-title">
+                    <i class="fas fa-fire"></i>
+                    热门讨论
+                </div>
+                <ul class="topics-list">
+                    <li>#4号楼新出现的小猫#</li>
+                    <li>#图书馆门前小猫去世#</li>
+                    <li>#小猫出没时间段#</li>
+                    <li>#投喂注意事项#</li>
+                    <li>#校园流浪猫绝育计划#</li>
+                </ul>
+                <button class="view-all-btn">查看全部话题</button>
+            </div>
+        </div>
+        <div class="middle-panel">
+            <div class="card publish-card">
+                <textarea class="publish-input" id="publish-input" placeholder="分享今天的巡护发现或动物趣事....."></textarea>
+                <div class="publish-tools">
+                    <div class="tool-items">
+                        <div class="tool-item">
+                            <i class="fas fa-image"></i>
+                            <span>图片/视频</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>添加位置</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-hashtag"></i>
+                            <span>话题</span>
+                        </div>
+                    </div>
+                    <button class="publish-btn" id="publish-btn">发布动态</button>
+                </div>
+            </div>
+            <div class="dynamic-list" id="dynamic-list">
+                <div class="card dynamic-item">
+                    <div class="dynamic-header">
+                        <img src="https://picsum.photos/id/64/200/200" alt="用户头像" class="avatar">
+                        <div class="user-info">
+                            <div class="username">淡定的小虾米</div>
+                            <div class="publish-time">15分钟前</div>
+                        </div>
+                        <div class="more-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="dynamic-content">
+                        4号楼新出现的这只小猫叫什么名字呀？有同学知道嘛（期待）
+                        <span class="topic-tag">#4号楼新出现的小猫#</span>
+                    </div>
+                    <div class="dynamic-media">
+                        <img src="https://picsum.photos/id/40/400/300" alt="小猫图片" class="dynamic-img">
+                    </div>
+                    <div class="dynamic-actions">
+                        <div class="action-item like-btn">
+                            <i class="fas fa-heart"></i>
+                            <span>37</span>
+                        </div>
+                        <div class="action-item comment-btn">
+                            <i class="fas fa-comment"></i>
+                            <span>10</span>
+                        </div>
+                        <div class="action-item share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>分享</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card dynamic-item">
+                    <div class="dynamic-header">
+                        <img src="https://picsum.photos/id/91/200/200" alt="用户头像" class="avatar">
+                        <div class="user-info">
+                            <div class="username">神秘同学12345</div>
+                            <div class="publish-time">1小时前</div>
+                        </div>
+                        <div class="more-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="dynamic-content">
+                        天颐广场的小猫我已投喂，再次提醒大家要少给猫猫投喂猫条呦~喂多了小猫会挑食的！
+                    </div>
+                    <div class="dynamic-actions">
+                        <div class="action-item like-btn">
+                            <i class="fas fa-heart"></i>
+                            <span>10</span>
+                        </div>
+                        <div class="action-item comment-btn">
+                            <i class="fas fa-comment"></i>
+                            <span>2</span>
+                        </div>
+                        <div class="action-item share-btn">
+                            <i class="fas fa-share-alt"></i>
+                            <span>分享</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-dynamics">
+                <a href="#" class="view-more-link">
+                    查看更多历史分享
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="card share-moment-card">
+                <div class="share-title">分享你的瞬间</div>
+                <div class="share-desc">
+                    让世界看到流浪猫保护的力量。<br>
+                    每一条动态都是爱心的传递。
+                </div>
+                <button class="take-photo-btn" id="take-photo-btn">
+                    <i class="fas fa-camera"></i>
+                    立即拍照分享
+                </button>
+            </div>
+            <div class="card contribution-rank-card">
+                <div class="rank-title">
+                    <i class="fas fa-trophy"></i>
+                    本周贡献榜
+                </div>
+                <ul class="rank-list">
+                    <li class="rank-item">
+                        <div class="rank-number">1</div>
+                        <img src="https://picsum.photos/id/29/200/200" alt="用户头像" class="rank-avatar">
+                        <div class="rank-user-info">
+                            <div class="rank-username">王一</div>
+                            <div class="rank-score">活跃指数1356</div>
+                        </div>
+                    </li>
+                    <li class="rank-item">
+                        <div class="rank-number">2</div>
+                        <img src="https://picsum.photos/id/39/200/200" alt="用户头像" class="rank-avatar">
+                        <div class="rank-user-info">
+                            <div class="rank-username">李二</div>
+                            <div class="rank-score">活跃指数1201</div>
+                        </div>
+                    </li>
+                    <li class="rank-item">
+                        <div class="rank-number">3</div>
+                        <img src="https://picsum.photos/id/49/200/200" alt="用户头像" class="rank-avatar">
+                        <div class="rank-user-info">
+                            <div class="rank-username">张三</div>
+                            <div class="rank-score">活跃指数1110</div>
+                        </div>
+                    </li>
+                    <li class="rank-item">
+                        <div class="rank-number">4</div>
+                        <img src="https://picsum.photos/id/59/200/200" alt="用户头像" class="rank-avatar">
+                        <div class="rank-user-info">
+                            <div class="rank-username">钱四</div>
+                            <div class="rank-score">活跃指数987</div>
+                        </div>
+                    </li>
+                    <li class="rank-item">
+                        <div class="rank-number">5</div>
+                        <img src="https://picsum.photos/id/69/200/200" alt="用户头像" class="rank-avatar">
+                        <div class="rank-user-info">
+                            <div class="rank-username">赵五</div>
+                            <div class="rank-score">活跃指数852</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <style>
+        .community-page {
+            width: 100%;
+            min-height: calc(100vh - 70px);
+            background-color: #f9f5f0;
+            padding: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        /* 核心修改：让中间面板居中，左右留白相等 */
+        .community-container {
+            display: grid;
+            grid-template-columns: auto minmax(0, 600px) auto;
+            gap: 25px;
+        }
+        .community-page .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border: 1px solid #f0e6d8;
+            transition: all 0.3s ease;
+        }
+        .community-page .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+        .community-page .left-panel {
+            display: flex;
+            flex-direction: column;
+        }
+        .community-page .ranger-community-card {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .community-page .ranger-online {
+            font-size: 16px;
+            color: #8d6e63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .community-page .ranger-online i {
+            color: #ff8a65;
+            font-size: 18px;
+        }
+
+        .community-page .ranger-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .community-page .stat-item {
+            text-align: center;
+            flex: 1;
+            padding: 15px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .community-page .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff8a65;
+            line-height: 1;
+        }
+
+        .community-page .stat-label {
+            font-size: 14px;
+            color: #8d6e63;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* 热门讨论卡片 */
+        .community-page .hot-topics-card {
+            padding: 20px;
+        }
+
+        .community-page .hot-topics-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8d6e63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ffcc80;
+        }
+
+        .community-page .hot-topics-title i {
+            color: #ff8a65;
+            font-size: 18px;
+        }
+
+        .community-page .topics-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .community-page .topics-list li {
+            font-size: 15px;
+            color: #8d6e63;
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            background: #fff3e0;
+        }
+
+        .community-page .topics-list li:hover {
+            color: #ff8a65;
+            background: #ffe0b2;
+            transform: translateX(5px);
+        }
+
+        .community-page .view-all-btn {
+            width: 100%;
+            padding: 12px 0;
+            background-color: #ff9800;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .community-page .view-all-btn:hover {
+            background-color: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+        }
+        .community-page .middle-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .community-page .publish-card {
+            padding: 24px;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .community-page .publish-input {
+            width: 100%;
+            height: 120px;
+            border: 2px solid #ffcc80;
+            border-radius: 12px;
+            padding: 16px;
+            background-color: #fff;
+            resize: none;
+            font-size: 16px;
+            color: #8d6e63;
+            margin-bottom: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        .community-page .publish-input:focus {
+            border-color: #ff9800;
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+        }
+
+        .community-page .publish-tools {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .community-page .tool-items {
+            display: flex;
+            gap: 20px;
+        }
+
+        .community-page .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: #8d6e63;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px 8px;
+            border-radius: 8px;
+        }
+
+        .community-page .tool-item:hover {
+            color: #ff8a65;
+            background: rgba(255, 152, 0, 0.1);
+        }
+
+        .community-page .tool-item i {
+            font-size: 18px;
+        }
+
+        .community-page .publish-btn {
+            padding: 12px 24px;
+            background-color: #ff8a65;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .community-page .publish-btn:hover {
+            background-color: #ff7043;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 122, 67, 0.3);
+        }
+
+        .community-page .dynamic-list {
+            padding: 0;
+        }
+
+        .community-page .dynamic-item {
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 0.5s ease-in-out;
+            border: 1px solid #f0e6d8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .community-page .dynamic-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .community-page .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f9d59b;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .community-page .user-info {
+            flex: 1;
+        }
+
+        .community-page .username {
+            font-size: 16px;
+            font-weight: 600;
+            color: #8d6e63;
+            margin-bottom: 4px;
+        }
+
+        .community-page .publish-time {
+            font-size: 14px;
+            color: #a1887f;
+        }
+
+        .community-page .more-btn {
+            font-size: 18px;
+            color: #a1887f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .community-page .more-btn:hover {
+            color: #8d6e63;
+            background: #ffe0b2;
+        }
+
+        .community-page .dynamic-content {
+            font-size: 16px;
+            color: #8d6e63;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            padding: 12px 0;
+        }
+
+        .community-page .dynamic-content .topic-tag {
+            color: #ff8a65;
+            cursor: pointer;
+            font-weight: 500;
+            background: rgba(255, 138, 101, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 4px;
+        }
+
+        .community-page .dynamic-content .topic-tag:hover {
+            background: rgba(255, 138, 101, 0.2);
+        }
+
+        .community-page .dynamic-media {
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .community-page .dynamic-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .community-page .dynamic-img:hover {
+            transform: scale(1.02);
+        }
+
+        .community-page .dynamic-actions {
+            display: flex;
+            gap: 30px;
+            padding-top: 16px;
+            border-top: 1px solid #f0e6d8;
+        }
+
+        .community-page .action-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: #8d6e63;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        .community-page .action-item:hover {
+            color: #ff8a65;
+            background: rgba(255, 138, 101, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .community-page .action-item i {
+            font-size: 18px;
+        }
+
+        .community-page .view-more-dynamics {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        .community-page .view-more-link {
+            font-size: 16px;
+            color: #ff8a65;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            padding: 12px 24px;
+            border: 2px solid #ff8a65;
+            border-radius: 24px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .community-page .view-more-link:hover {
+            color: #fff;
+            background: #ff8a65;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 138, 101, 0.3);
+        }
+
+
+        .community-page .right-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .community-page .share-moment-card {
+            padding: 24px;
+            text-align: center;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .community-page .share-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #8d6e63;
+            margin-bottom: 16px;
+        }
+
+        .community-page .share-desc {
+            font-size: 15px;
+            color: #a1887f;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            padding: 0 10px;
+        }
+
+        .community-page .take-photo-btn {
+            width: 100%;
+            padding: 16px 0;
+            background-color: #ff9800;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+        }
+
+        .community-page .take-photo-btn:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(245, 124, 0, 0.4);
+        }
+
+        .community-page .take-photo-btn i {
+            font-size: 20px;
+        }
+
+
+        .community-page .contribution-rank-card {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .community-page .rank-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #8d6e63;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ffcc80;
+        }
+
+        .community-page .rank-title i {
+            color: #ff9800;
+            font-size: 20px;
+        }
+
+        .community-page .rank-list {
+            list-style: none;
+        }
+
+        .community-page .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .community-page .rank-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .community-page .rank-item:hover {
+            background: rgba(255,255,255,1);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .community-page .rank-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ff9800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .community-page .rank-item:nth-child(1) .rank-number {
+            background: #ffb74d;
+        }
+
+        .community-page .rank-item:nth-child(2) .rank-number {
+            background: #ffcc80;
+        }
+
+        .community-page .rank-item:nth-child(3) .rank-number {
+            background: #ffd54f;
+        }
+
+        .community-page .rank-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffcc80;
+        }
+
+        .community-page .rank-user-info {
+            flex: 1;
+        }
+
+        .community-page .rank-username {
+            font-size: 15px;
+            color: #8d6e63;
+            font-weight: 600;
+        }
+
+        .community-page .rank-score {
+            font-size: 13px;
+            color: #ff9800;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1200px) {
+            .community-container {
+                grid-template-columns: auto minmax(0, 580px) auto;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .community-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .right-panel {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .community-page {
+                padding: 20px;
+            }
+            .community-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .right-panel {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .community-page .card {
+                padding: 16px;
+            }
+            .community-page .dynamic-actions {
+                gap: 20px;
+            }
+        }
+    </style>
+
+    <script>
+ 
+        setTimeout(() => {
+
+            document.getElementById('publish-btn').addEventListener('click', function() {
+                const publishInput = document.getElementById('publish-input');
+                const dynamicList = document.getElementById('dynamic-list');
+                const content = publishInput.value.trim();
+                
+                if (content === '') {
+                    alert('请输入要分享的内容后再发布哦！');
+                    return;
+                }
+                
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const publishTime = `${hours}:${minutes}`; 
+                
+
+                const avatarIds = [64, 91, 29, 39, 49];
+                const randomAvatarId = avatarIds[Math.floor(Math.random() * avatarIds.length)];
+                
+
+                const newDynamic = `
+                    <div class="card dynamic-item">
+                        <div class="dynamic-header">
+                            <img src="https://picsum.photos/id/${randomAvatarId}/200/200" alt="用户头像" class="avatar">
+                            <div class="user-info">
+                                <div class="username">我</div>
+                                <div class="publish-time">刚刚</div>
+                            </div>
+                            <div class="more-btn">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <div class="dynamic-content">
+                            ${content.replace(/#[^#]+#/g, '<span class="topic-tag">$&</span>')}
+                        </div>
+                        <div class="dynamic-actions">
+                            <div class="action-item like-btn">
+                                <i class="fas fa-heart"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="action-item comment-btn">
+                                <i class="fas fa-comment"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="action-item share-btn">
+                                <i class="fas fa-share-alt"></i>
+                                <span>分享</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                dynamicList.insertAdjacentHTML('afterbegin', newDynamic);
+                
+
+                alert('动态发布成功！');
+                publishInput.value = '';
+                
+
+                bindDynamicEvents();
+                
+
+                updateDynamicCount();
+            });
+
+ 
+            document.getElementById('take-photo-btn').addEventListener('click', function() {
+                alert('已唤起相机功能，请拍摄流浪猫的可爱瞬间吧！');
+                
+            });
+
+
+            function bindDynamicEvents() {
+ 
+                const likeBtns = document.querySelectorAll('#community-app .like-btn');
+                likeBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const icon = this.querySelector('i');
+                        const countSpan = this.querySelector('span');
+                        let count = parseInt(countSpan.textContent);
+                        
+                        if (!icon.style.color) {
+ 
+                            icon.style.color = '#ff8a65';
+                            countSpan.textContent = count + 1;
+                        } else {
+
+                            icon.style.color = '';
+                            countSpan.textContent = count - 1;
+                        }
+                    });
+                });
+
+
+                const commentBtns = document.querySelectorAll('#community-app .comment-btn');
+                commentBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const username = this.closest('.dynamic-item').querySelector('.username').textContent;
+                        const commentContent = prompt(`给 ${username} 的动态评论：`);
+                        
+                        if (commentContent && commentContent.trim() !== '') {
+                            alert(`评论成功！你对 ${username} 说：${commentContent}`);
+
+                        }
+                    });
+                });
+            }
+
+
+            function updateDynamicCount() {
+                const statNumber = document.querySelector('#community-app .stat-item .stat-number');
+                let currentCount = parseInt(statNumber.textContent);
+                statNumber.textContent = currentCount + 1;
+            }
+
+
+            const topicItems = document.querySelectorAll('#community-app .topics-list li');
+            topicItems.forEach(item => {
+                item.addEventListener('click', function() {
+
+                    const publishInput = document.getElementById('publish-input');
+                    publishInput.value += ` ${this.textContent} `;
+                    publishInput.focus();
+                    alert(`已将话题${this.textContent}添加到输入框`);
+                });
+            });
+
+
+            document.querySelector('#community-app .view-all-btn').addEventListener('click', function() {
+                alert('已为你展示全部热门话题，共12个相关话题');
+            });
+
+
+            bindDynamicEvents();
+        }, 500);
+    </script>
+</div>
